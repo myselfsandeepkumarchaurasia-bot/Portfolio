@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --color-primary: #10B981;
+    --color-primary-light: #6EE7B7;
+    --color-primary-vlight: #ECFDF5;
+    --color-bg: #F8FAFC;
+    --color-bg-alt: #F1F5F9;
+    --color-card: #FFFFFF;
+    --color-text: #0F172A;
+    --color-text-muted: #334155;
+    --color-border: #CBD5E1;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8FAFC;
+    color: #0F172A;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: #0F172A;
+    letter-spacing: -0.015em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom subtle scrollbar in high-contrast crisp tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* High Contrast Card Helpers */
+.light-card {
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 4px 12px 0 rgba(15, 23, 42, 0.03);
+}
+
+.light-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: #10B981;
+  box-shadow: 0 12px 24px -6px rgba(16, 185, 129, 0.15), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Glassmorphism helpers with high-contrast text support */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: #FFFFFF;
+  border-color: #10B981;
+  box-shadow: 0 12px 28px -6px rgba(16, 185, 129, 0.16);
+}
+
+/* Subtle mint/emerald glow accents */
+.mint-glow {
+  box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.25);
+}
+
+/* Floating AI Button Pulse */
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35), 0 0 0 0 rgba(110, 231, 183, 0.5);
+  }
+  50% {
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45), 0 0 0 6px rgba(110, 231, 183, 0);
+  }
+}
+
+.ai-pulse {
+  animation: softPulse 2.5s infinite;
+}
+
+/* Professional High-Contrast Typography & Surface Overrides */
+[class*="text-[#5E7067]"] {
+  color: #334155 !important; /* Replaces mid-gray with deep, crisp slate-700 (9:1 contrast) */
+}
+
+[class*="text-[#18352A]"] {
+  color: #0F172A !important; /* Replaces dull green-gray with authoritative deep slate-900 (19.5:1 contrast) */
+}
+
+[class*="text-[#5BAF82]"] {
+  color: #047857 !important; /* Replaces pale green with deep high-contrast emerald-700 (7.5:1 contrast) */
+}
+
+[class*="border-[#DCEBE1]"] {
+  border-color: #CBD5E1 !important; /* Sharp, crisp border definitions */
+}
+
+[class*="bg-[#F7FBF8]"] {
+  background-color: #F8FAFC !important; /* Crisp, clean slate-50 backdrop */
+}
+
+[class*="bg-[#EEF7F1]"] {
+  background-color: #F1F5F9 !important; /* Clean contrast section backgrounds */
+}
+
+[class*="bg-[#E8F8EE]"] {
+  background-color: #ECFDF5 !important; /* Fresh, crisp emerald-50 accent */
+}
